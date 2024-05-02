@@ -104,7 +104,9 @@ function App() {
       <div className="credits">
 
       </div>
-
+     <div className="credits">
+      
+     </div>
     </>
   );
 }
