@@ -6,7 +6,7 @@
 --primary-color-Blue:rgb(94, 170, 225);
 --primary-color-Blue-05:rgba(145, 198, 236, 0.688);
 --primary-color-green-05:rgba(149, 225, 160, 0.733);
---color-05:rgb(182, 182, 182);
+--color-05:rgb(230, 230, 230);
 --primary-color-orange:rgba(255, 158, 39, 0.848);
 /*  Fonts */
 --thin: 100;
@@ -81,9 +81,26 @@ padding: 10px;
 
 .productD{
   display: none;
-
+  transition: 0.5s ease;
 }
+#dropdown:hover .productD{
 
+  position: absolute;
+  display: grid;
+  flex-direction:column ;
+  left: 70px;
+  top: 30px;
+  gap: 1px;
+  z-index: 9;
+  width: 150px;
+  background-color: var(--color-05);
+  padding: 5px;
+  font-family: var(--poppins);
+  transition: 0.5s ease;
+  &>*{
+    border:2px solid rgba(184, 184, 184, 0.651);
+  };
+}
 .sign{
   width: 10%;
   display: flex;
@@ -146,11 +163,23 @@ border: 2px solid var(--primary-color-White);
   /* &>*{
     -webkit-text-stroke-color: rgba(0, 0, 0, 0.799);
       -webkit-text-stroke-width: .2px;
-  } */
+    } */
+   animation: maincont 1s ease-in;
   &>span{
     color: rgb(0, 0, 0);
   }
 }
+@keyframes maincont{
+  0%{
+    bottom: -80%;
+    opacity: 0;
+  }
+  100%{
+    top: 38%;
+    opacity :1;
+  }
+
+} 
 .about {
   background-color:rgba(255, 255, 255, 0.277);
   height: 90vh;
@@ -212,8 +241,7 @@ border: 2px solid var(--primary-color-White);
 }
 
 .details>*:hover{
-  width: 240px;
-  height:190px;
+ transform: scale(1.1);
 }
 
 .details{
@@ -223,6 +251,7 @@ border: 2px solid var(--primary-color-White);
   position: relative;
   flex-wrap:wrap;
   height: 50vh;
+  width: -moz-fit-content; 
   width: fit-content;
   padding: 20px;
   left:600px;
