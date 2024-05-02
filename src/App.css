@@ -62,6 +62,8 @@ padding: 10px;
 header{
   animation: header 1s ease;
   position: relative;
+  z-index: 111;
+  width: 100%;
 }
 @keyframes header {
   0%{
