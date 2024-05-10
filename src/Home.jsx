@@ -1,7 +1,6 @@
 import React from "react"
 import image from "./Treeimage.png"
 function App() {
-  var ProductD= document.querySelector(".productD");
   return (
     <>
       <header>
@@ -105,7 +104,7 @@ function App() {
 
       </div>
      <div className="credits">
-      
+
      </div>
     </>
   );
