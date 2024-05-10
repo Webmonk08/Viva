@@ -1,6 +1,30 @@
-import React from "react"
+import React, { useEffect } from "react"
 import image from "./Treeimage.png"
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+// import CSSRulePlugin from "gsap/CSSPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 function App() {
+  // const a=useRef()
+  gsap.registerPlugin(ScrollTrigger)
+  useGSAP(() =>
+
+    
+      gsap.to("#Tree", {
+        x:50,  
+        scrollTrigger: "#About-cont",
+        start: "top",
+        end: 100,
+        duration: .2
+      })
+
+
+  );
+
+
+
+
   return (
     <>
       <header>
@@ -26,7 +50,7 @@ function App() {
             <li>Media</li>
             <li>Blog</li>
             <li>Contact US</li>
-          </div>  
+          </div>
 
 
           <div className="sign">
@@ -57,6 +81,7 @@ function App() {
           <h1>About Us</h1>
           <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium consectetur, est quos deleniti error quis at. Quam nostrum at aliquam nobis dolorem aspernatur praesentium minus ratione sequi sed. Itaque, accusamus.</span>
         </div>
+        
         <img id="Tree" src={image} alt="" />
       </div>
 
@@ -83,7 +108,6 @@ function App() {
       </div>
 
 
-
       <div className="ventures">
         <span>Ventures</span>
         <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos mollitia maxime praesentium perferendis obcaecati officia necessitatibus velit tempore minus asperiores ducimus nemo hic adipisci, dolore cupiditate ad, quam fugiat illum!</span>
@@ -103,9 +127,6 @@ function App() {
       <div className="credits">
 
       </div>
-     <div className="credits">
-
-     </div>
     </>
   );
 }
